@@ -143,6 +143,33 @@ describe('Item', () => {
 		})
 	})
 
+	it('Aged Brie\'s quality should never be > 50', () => {
+		const item = new Item(agedBrie, 12, 40)
+		const expectedValues = [
+			{ sellIn: 11, quality: 41 },
+			{ sellIn: 10, quality: 43 },
+			{ sellIn: 9, quality: 45 },
+			{ sellIn: 8, quality: 47 },
+			{ sellIn: 7, quality: 49 },
+			{ sellIn: 6, quality: 50 },
+			{ sellIn: 5, quality: 50 },
+			{ sellIn: 4, quality: 50 },
+			{ sellIn: 3, quality: 50 },
+			{ sellIn: 2, quality: 50 },
+			{ sellIn: 1, quality: 50 },
+			{ sellIn: 0, quality: 0 },
+			{ sellIn: -1, quality: 0 }
+		]
+		expectedValues.forEach(expectedValue => {
+			item.reduceSellIn()
+			item.updateQuality()
+			expect(item.sellIn).toEqual(expectedValue.sellIn)
+			expect(item.quality).toEqual(expectedValue.quality)
+			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
+		})
+	})
+
 	it('Sulfuras should never decrease in quality', () => {
 		const item = new Item(sulfuras, 10, 10)
 		item.reduceSellIn()
