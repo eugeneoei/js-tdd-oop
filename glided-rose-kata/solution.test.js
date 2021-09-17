@@ -1,4 +1,8 @@
 const { Item } = require('./solution')
+const {
+	agedBrie,
+	// sulfuras
+} = require('./defs')
 
 const minimumQualityValue = 0
 const maximumQualityValue = 50
@@ -55,7 +59,7 @@ describe('Item', () => {
 	})
 
 	it('Aged Brie\'s quality should increase by 1 at the end of the day', () => {
-		const item = new Item('Aged Brie', 20, 10)
+		const item = new Item(agedBrie, 20, 10)
 		item.reduceSellIn()
 		item.updateQuality()
 		expect(item.sellIn).toEqual(19)
@@ -65,7 +69,7 @@ describe('Item', () => {
 	})
 
 	it('Aged Brie\'s quality should increase by 2 at the end of the day if "sellIn" is <= 10', () => {
-		const item = new Item('Aged Brie', 12, 10)
+		const item = new Item(agedBrie, 12, 10)
 
 		item.reduceSellIn()
 		item.updateQuality()
@@ -91,7 +95,7 @@ describe('Item', () => {
 	})
 
 	it('Aged Brie\'s quality should increase by 3 at the end of the day if "sellIn" is <= 5', () => {
-		const item = new Item('Aged Brie', 12, 10)
+		const item = new Item(agedBrie, 12, 10)
 		const expectedValues = [
 			{ sellIn: 11, quality: 11 },
 			{ sellIn: 10, quality: 13 },
@@ -113,7 +117,7 @@ describe('Item', () => {
 	})
 
 	it('Aged Brie\'s quality should become 0 at the end of the day if "sellIn" is <= 0', () => {
-		const item = new Item('Aged Brie', 12, 10)
+		const item = new Item(agedBrie, 12, 10)
 		const expectedValues = [
 			{ sellIn: 11, quality: 11 },
 			{ sellIn: 10, quality: 13 },
@@ -138,5 +142,9 @@ describe('Item', () => {
 			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 		})
 	})
+
+	// it('Sulfuras should never decrease in quality', () => {
+	// 	const item = new Item('Sulfuras')
+	// })
 
 })

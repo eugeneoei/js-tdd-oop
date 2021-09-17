@@ -1,3 +1,7 @@
+const {
+	agedBrie
+} = require('./defs')
+
 class Item {
 
 	constructor(name, sellIn, quality) {
@@ -12,7 +16,7 @@ class Item {
 
 	updateQuality() {
 
-		if (this.name === 'Aged Brie') {
+		if (this.name === agedBrie) {
 
 			if (this.sellIn <= 0) {
 				this.quality = 0
