@@ -6,14 +6,6 @@ class Item {
 		this.quality = quality
 	}
 
-	getSellIn() {
-		return this.sellIn
-	}
-
-	getQuality() {
-		return this.quality
-	}
-
 }
 
 module.exports = {

@@ -10,4 +10,11 @@ describe('Item', () => {
 		expect(item.quality).toEqual(1)
 	})
 
+	// reduce 'sellIn' value when 'reduceSellIn' function is called
+	it('Should reduce "sellIn" value by 1 at the end of the day', () => {
+		const item = new Item('Item One', 1, 1)
+		item.reduceSellIn()
+		expect(item.sellIn).toEqual(0)
+	})
+
 })
