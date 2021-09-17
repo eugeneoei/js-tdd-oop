@@ -25,11 +25,13 @@ describe('Item', () => {
 	})
 
 	it('Should reduce "quality" by half if "sellIn" is < 0', () => {
-		const item = new Item('Item One', 1, 1)
-		item.reduceSellIn()
+		const item = new Item('Item One', 2, 2)
 		item.reduceSellIn()
 		item.reduceQuality()
-		expect(item.quality).toEqual(0.5)
+		expect(item.quality).toEqual(1)
+		item.reduceSellIn()
+		item.reduceQuality()
+		expect(item.quality).toEqual(0)
 	})
 
 })
