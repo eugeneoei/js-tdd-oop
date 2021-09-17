@@ -1,8 +1,5 @@
-const { Item } = require('./solution')
-const {
-	agedBrie,
-	sulfuras
-} = require('./defs')
+const { Item, Shop } = require('./solution')
+const { agedBrie, sulfuras } = require('./defs')
 
 const minimumQualityValue = 0
 const maximumQualityValue = 50
@@ -246,11 +243,14 @@ describe('Shop', () => {
 		]
 		const shop = new Shop('Shop One', items)
 		expect(shop.name).toEqual('Shop One')
+		expect(Array.isArray(shop.items)).toEqual(true)
 		expect(shop.items.length).toEqual(3)
 	})
 
-	// it('When Shop is initialised with only name parameter, "items" field should be an empty array', () => {
-
+	// it('When a Shop is instantiated with only "name" parameter, "items" field should be an empty array', () => {
+	// 	const shop = new Shop('Shop One', items)
+	// 	expect(shop.name).toEqual('Shop One')
+	// 	expect(shop.items.length).toEqual(3)	
 	// })
 
 
