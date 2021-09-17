@@ -65,25 +65,25 @@ describe('Item', () => {
 	})
 
 	it('Aged Brie\'s quality should increase by 2 at the end of the day if "sellIn" is <= 10', () => {
-		const item = new Item('Aged Brie', 11, 10)
+		const item = new Item('Aged Brie', 12, 10)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(10)
+		expect(item.sellIn).toEqual(11)
 		expect(item.quality).toEqual(11)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(9)
+		expect(item.sellIn).toEqual(10)
 		expect(item.quality).toEqual(13)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(8)
+		expect(item.sellIn).toEqual(9)
 		expect(item.quality).toEqual(15)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
