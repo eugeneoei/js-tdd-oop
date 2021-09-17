@@ -1,8 +1,19 @@
 const { Item, Shop } = require('./solution')
-const { agedBrie, sulfuras } = require('./defs')
-
-const minimumQualityValue = 0
-const maximumQualityValue = 50
+const {
+	agedBrie,
+	agedBrieA,
+	agedBrieB,
+	agedBrieC,
+	durian,
+	sulfuras,
+	sulfurasA,
+	sulfurasB,
+	sulfurasC,
+	soulStone,
+	minimumQualityValue,
+	maximumQualityValue,
+	legendaryItemQualityValue
+} = require('./defs')
 
 describe('Item', () => {
 
@@ -212,23 +223,20 @@ describe('Item', () => {
 		item.reduceSellIn()
 		item.updateQuality()
 		expect(item.sellIn).toEqual(9)
-		expect(item.quality).toEqual(10)
+		expect(item.quality).toEqual(legendaryItemQualityValue)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
-		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
 		expect(item.sellIn).toEqual(8)
-		expect(item.quality).toEqual(10)
+		expect(item.quality).toEqual(legendaryItemQualityValue)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
-		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
 		expect(item.sellIn).toEqual(7)
-		expect(item.quality).toEqual(10)
+		expect(item.quality).toEqual(legendaryItemQualityValue)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
-		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 	})
 
 })
@@ -253,6 +261,25 @@ describe('Shop', () => {
 		expect(Array.isArray(shop.items)).toEqual(true)
 		expect(shop.items.length).toEqual(0)
 	})
+
+	// it('Shop should update all it\'s items at the end of the day', () => {
+	// 	const items = [
+	// 		new Item(agedBrie, 12, 40), // 11, 41
+	// 		new Item(agedBrieA, 5, 48), // 3, 50
+	// 		new Item(agedBrieB, 3, 40), // 2, 43
+	// 		new Item(agedBrieC, 1, 28), // 0, 0
+	// 		new Item(durian, 1, 1),
+	// 		new Item(sulfuras, 1, 1),
+	// 		new Item(sulfurasA, 1, 1),
+	// 		new Item(sulfurasB, 1, 1),
+	// 		new Item(sulfurasC, 1, 1),
+	// 		new Item(soulStone, 1, 1), 
+	// 		new Item('Item One', 10, 55) // 9, 50
+	// 		new Item('Item Two', 8, 0) // 8, 0
+	// 		new Item('Item Three', 24, 18) // 23, 17
+	// 	]
+	// 	const shop = new Shop('Shop One', items)
+	// })
 
 
 })

@@ -1,6 +1,7 @@
 const {
 	backstagePassesItems,
-	legendaryItems
+	legendaryItems,
+	legendaryItemQualityValue
 } = require('./defs')
 
 class Item {
@@ -44,7 +45,10 @@ class Item {
 
 		} else if (legendaryItems.includes(this.name)) {
 
-			// pass since sulfuras should never decrease in quality
+			// legendary items should never decrease in quality but value is always 80
+			if (this.quality !== legendaryItemQualityValue) {
+				this.quality = legendaryItemQualityValue
+			}
 
 		} else {
 
