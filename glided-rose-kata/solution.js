@@ -12,10 +12,6 @@ class Item {
 		this.quality = quality
 	}
 
-	reduceSellIn() {
-		this.sellIn -= 1
-	}
-
 	checkMaximumQuality() {
 		if (this.quality > 50) {
 			this.quality = 50
@@ -26,6 +22,10 @@ class Item {
 		if (this.quality < 0) {
 			this.quality = 0
 		}
+	}
+
+	reduceSellIn() {
+		this.sellIn -= 1
 	}
 
 	updateQuality() {
@@ -71,6 +71,13 @@ class Shop {
 	constructor(name, items=[]) {
 		this.name = name
 		this.items = items
+	}
+
+	updateItemsQuality() {
+		this.items.forEach(item => {
+			item.reduceSellIn()
+			item.updateQuality()
+		})
 	}
 
 }

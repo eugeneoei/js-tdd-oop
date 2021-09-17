@@ -279,13 +279,9 @@ describe('Shop', () => {
 			new Item('Item Three', 24, 18),
 			new Item('Item Four', 0, 18)
 		]
-		const shop = new Shop('Shop One', items)
-
-		shop.updateItemsQuality()
-
 		expectedValues = [
 			{ sellIn: 11, quality: 41 },
-			{ sellIn: 3, quality: 50 },
+			{ sellIn: 4, quality: 50 },
 			{ sellIn: 2, quality: 43 },
 			{ sellIn: 0, quality: 0 },
 			{ sellIn: 9, quality: 50 },
@@ -300,14 +296,13 @@ describe('Shop', () => {
 			{ sellIn: -1, quality: 9 }
 		]
 
+		const shop = new Shop('Shop One', items)
+		shop.updateItemsQuality()
 		const shopItems = shop.items
 		shop.items.forEach((item, index) => {
-			// console.log('')
-			// console.log(`Test Case for ${item.name}`)
 			expect(item.sellIn).toEqual(expectedValues[index]['sellIn'])
 			expect(item.quality).toEqual(expectedValues[index]['quality'])
 		})
 	})
-
 
 })
