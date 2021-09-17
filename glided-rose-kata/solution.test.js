@@ -102,7 +102,6 @@ describe('Item', () => {
 			{ sellIn: 5, quality: 24 },
 			{ sellIn: 4, quality: 27 }
 		]
-
 		expectedValues.forEach(expectedValue => {
 			item.reduceSellIn()
 			item.updateQuality()
@@ -111,7 +110,33 @@ describe('Item', () => {
 			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 		})
+	})
 
+	it('Aged Brie\'s quality should become 0 at the end of the day if "sellIn" is <= 0', () => {
+		const item = new Item('Aged Brie', 12, 10)
+		const expectedValues = [
+			{ sellIn: 11, quality: 11 },
+			{ sellIn: 10, quality: 13 },
+			{ sellIn: 9, quality: 15 },
+			{ sellIn: 8, quality: 17 },
+			{ sellIn: 7, quality: 19 },
+			{ sellIn: 6, quality: 21 },
+			{ sellIn: 5, quality: 24 },
+			{ sellIn: 4, quality: 27 },
+			{ sellIn: 3, quality: 30 },
+			{ sellIn: 2, quality: 33 },
+			{ sellIn: 1, quality: 36 },
+			{ sellIn: 0, quality: 0 },
+			{ sellIn: -1, quality: 0 }
+		]
+		expectedValues.forEach(expectedValue => {
+			item.reduceSellIn()
+			item.updateQuality()
+			expect(item.sellIn).toEqual(expectedValue.sellIn)
+			expect(item.quality).toEqual(expectedValue.quality)
+			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
+		})
 	})
 
 })
