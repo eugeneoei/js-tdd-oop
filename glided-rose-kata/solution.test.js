@@ -235,3 +235,23 @@ describe('Item', () => {
 	})
 
 })
+
+describe('Shop', () => {
+
+	it('On instance creation, "name" should equal value passed to constructor and number of items in Shop should equal number of items passed to constructor', () => {
+		const items = [
+			new Item('Item One', 1, 1),
+			new Item('Item Two', 2, 2),
+			new Item('Item Three', 3, 3)
+		]
+		const shop = new Shop('Shop One', items)
+		expect(shop.name).toEqual('Shop One')
+		expect(shop.items.length).toEqual(3)
+	})
+
+	// it('When Shop is initialised with only name parameter, "items" field should be an empty array', () => {
+
+	// })
+
+
+})

@@ -62,6 +62,16 @@ class Item {
 
 }
 
+class Shop {
+
+	constructor(name, items) {
+		this.name = name
+		this.items = items
+	}
+
+}
+
 module.exports = {
-	Item
+	Item,
+	Shop
 }
