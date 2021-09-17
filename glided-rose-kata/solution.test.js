@@ -1,7 +1,7 @@
 const { Item } = require('./solution')
 const {
 	agedBrie,
-	// sulfuras
+	sulfuras
 } = require('./defs')
 
 const minimumQualityValue = 0
@@ -143,8 +143,28 @@ describe('Item', () => {
 		})
 	})
 
-	// it('Sulfuras should never decrease in quality', () => {
-	// 	const item = new Item('Sulfuras')
-	// })
+	it('Sulfuras should never decrease in quality', () => {
+		const item = new Item(sulfuras, 10, 10)
+		item.reduceSellIn()
+		item.updateQuality()
+		expect(item.sellIn).toEqual(9)
+		expect(item.quality).toEqual(10)
+		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
+
+		item.reduceSellIn()
+		item.updateQuality()
+		expect(item.sellIn).toEqual(8)
+		expect(item.quality).toEqual(10)
+		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
+
+		item.reduceSellIn()
+		item.updateQuality()
+		expect(item.sellIn).toEqual(7)
+		expect(item.quality).toEqual(10)
+		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
+	})
 
 })
