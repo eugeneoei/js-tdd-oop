@@ -1,6 +1,6 @@
 const {
-	agedBrie,
-	sulfuras
+	backstagePassesItems,
+	legendaryItems
 } = require('./defs')
 
 class Item {
@@ -29,7 +29,7 @@ class Item {
 
 	updateQuality() {
 
-		if (this.name === agedBrie) {
+		if (backstagePassesItems.includes(this.name)) {
 
 			if (this.sellIn <= 0) {
 				this.quality = 0
@@ -42,7 +42,7 @@ class Item {
 			}
 			this.checkMaximumQuality()
 
-		} else if (this.name === sulfuras) {
+		} else if (legendaryItems.includes(this.name)) {
 
 			// pass since sulfuras should never decrease in quality
 
