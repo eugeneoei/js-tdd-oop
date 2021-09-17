@@ -55,11 +55,15 @@ describe('Item', () => {
 	})
 
 	it('Aged Brie\'s quality should increase by 1 at the end of the day', () => {
-		const item = new Item('Aged Brie', 2, 10)
+		const item = new Item('Aged Brie', 20, 10)
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(1)
+		expect(item.sellIn).toEqual(19)
 		expect(item.quality).toEqual(11)
+		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 	})
+
+	
 
 })
