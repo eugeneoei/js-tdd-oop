@@ -6,6 +6,10 @@ class Item {
 		this.quality = quality
 	}
 
+	reduceSellIn() {
+		this.sellIn -= 1
+	}
+
 }
 
 module.exports = {
