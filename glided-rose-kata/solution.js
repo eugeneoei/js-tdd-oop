@@ -21,6 +21,12 @@ class Item {
 		}
 	}
 
+	checkMinimumQuality() {
+		if (this.quality < 0) {
+			this.quality = 0
+		}
+	}
+
 	updateQuality() {
 
 		if (this.name === agedBrie) {
@@ -45,6 +51,7 @@ class Item {
 
 			if (this.sellIn >= 0) {
 				this.quality -= 1
+				this.checkMinimumQuality()
 			} else {
 				this.quality *= 0.5
 			}
