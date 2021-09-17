@@ -14,7 +14,9 @@ class Item {
 
 		if (this.name === 'Aged Brie') {
 
-			if (this.sellIn <= 10) {
+			if (this.sellIn <= 5) {
+				this.quality += 3
+			} else if (this.sellIn <= 10) {
 				this.quality += 2
 			} else {
 				this.quality += 1
@@ -27,7 +29,7 @@ class Item {
 			} else {
 				this.quality *= 0.5
 			}
-			
+
 		}
 	}
 
