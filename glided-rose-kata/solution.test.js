@@ -78,6 +78,26 @@ describe('Item', () => {
 		})
 	})
 
+	it('An item\'s quality should never be > 50', () => {
+		const item = new Item('Item One', 10, 55)
+		const expectedValues = [
+			{ sellIn: 9, quality: 50 },
+			{ sellIn: 8, quality: 49 },
+			{ sellIn: 7, quality: 48 },
+			{ sellIn: 6, quality: 47 },
+			{ sellIn: 5, quality: 46 },
+			{ sellIn: 4, quality: 45 }
+		]
+		expectedValues.forEach(expectedValue => {
+			item.reduceSellIn()
+			item.updateQuality()
+			expect(item.sellIn).toEqual(expectedValue.sellIn)
+			expect(item.quality).toEqual(expectedValue.quality)
+			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
+		})
+	})
+
 	it('Aged Brie\'s quality should increase by 1 at the end of the day', () => {
 		const item = new Item(agedBrie, 20, 10)
 		item.reduceSellIn()
