@@ -15,6 +15,12 @@ class Item {
 		this.sellIn -= 1
 	}
 
+	checkMaximumQuality() {
+		if (this.quality > 50) {
+			this.quality = 50
+		}
+	}
+
 	updateQuality() {
 
 		if (this.name === agedBrie) {
@@ -29,6 +35,8 @@ class Item {
 				this.quality += 1
 			}
 
+			this.checkMaximumQuality()
+
 		} else if (this.name === sulfuras) {
 
 			// pass since sulfuras should never decrease in quality
@@ -42,6 +50,7 @@ class Item {
 			}
 
 		}
+		
 	}
 
 }
