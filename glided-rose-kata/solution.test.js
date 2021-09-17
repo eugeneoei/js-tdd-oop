@@ -17,4 +17,11 @@ describe('Item', () => {
 		expect(item.sellIn).toEqual(0)
 	})
 
+	it('Should reduce "quality" by 1 if "sellIn" is >= 0', () => {
+		const item = new Item('Item One', 1, 1)
+		item.reduceSellIn()
+		item.reduceQuality()
+		expect(item.quality).toEqual(1)
+	})
+
 })
