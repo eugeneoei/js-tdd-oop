@@ -1,5 +1,8 @@
 const { Item } = require('./solution')
 
+const minimumQualityValue = 0
+const maximumQualityValue = 50
+
 describe('Item', () => {
 
 	// instance creation test
@@ -22,25 +25,33 @@ describe('Item', () => {
 		item.reduceSellIn()
 		item.reduceQuality()
 		expect(item.quality).toEqual(0)
+		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 	})
 
 	it('Should reduce "quality" by half if "sellIn" is < 0', () => {
-		const item = new Item('Item Two', 2, 10)
+		const item = new Item('Item One', 2, 10)
 
 		item.reduceSellIn()
 		item.reduceQuality()
 		expect(item.sellIn).toEqual(1)
 		expect(item.quality).toEqual(9)
+		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.reduceQuality()
 		expect(item.sellIn).toEqual(0)
 		expect(item.quality).toEqual(8)
-		
+		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
+
 		item.reduceSellIn()
 		item.reduceQuality()
 		expect(item.sellIn).toEqual(-1)
 		expect(item.quality).toEqual(4)
+		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
+		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 	})
 
 })
