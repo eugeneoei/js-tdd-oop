@@ -1,31 +1,13 @@
-# Objectives
+# Overview
 
-Add the new feature to our system so that we can begin selling a new category of items
+TDD OOP Javascript practice exercise on gilded-rose-kata.
 
-# System Implementation
+For full descriptions of requirements and user stories, refer to [this](https://kata-log.rocks/gilded-rose-kata).
 
-- `SellIn` value === denotes the number of days we have to sell the item (`int`)
-- `Quality` value === denotes how valuable the item is (`int`)
-- Lowers both `SellIn` and `Quality` values for every item
+# Assumptions
 
-# Requirements
+- Not entirely certain what "Quality drops to 0 after the concert" requirement means. Assumes that `quality` becomes `0` when `sellIn` < 0
 
-- `Quality` reduces by half when `SellIn` < 0
-- 0 <= `Quality` <= 50
+- Assumes that `Item` class can be instantiated with `quality` > 50. However, `quality` will be reset to 50 if updated `quality` is > 50
 
-- expcetions: 
-	- “Aged Brie” actually increases in Quality the older it gets
-		1. Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
-		2. Quality drops to 0 after the concert
-	- “Sulfuras”, being a legendary item, never has to be sold or decreases in Quality
-
-# User Stories
-
-- Once the sell by date has passed, Quality degrades twice as fast
-- The Quality of an item is never negative
-- “Aged Brie” actually increases in Quality the older it gets
-- The Quality of an item is never more than 50
-- “Sulfuras”, being a legendary item, never has to be sold or decreases in Quality
-- “Backstage passes”, like aged brie, increases in Quality as its SellIn value approaches;
-	- Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
-	- Quality drops to 0 after the concert
+- Assumes that a legendary item can be instantiated with any value but will be set to 80 when it's quality is updated
