@@ -1,5 +1,6 @@
 const {
-	agedBrie
+	agedBrie,
+	sulfuras
 } = require('./defs')
 
 class Item {
@@ -27,6 +28,10 @@ class Item {
 			} else {
 				this.quality += 1
 			}
+
+		} else if (this.name === sulfuras) {
+
+			// pass since sulfuras should never decrease in quality
 
 		} else {
 
