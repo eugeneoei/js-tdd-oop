@@ -64,7 +64,7 @@ class Item {
 
 class Shop {
 
-	constructor(name, items) {
+	constructor(name, items=[]) {
 		this.name = name
 		this.items = items
 	}

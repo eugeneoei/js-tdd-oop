@@ -247,11 +247,12 @@ describe('Shop', () => {
 		expect(shop.items.length).toEqual(3)
 	})
 
-	// it('When a Shop is instantiated with only "name" parameter, "items" field should be an empty array', () => {
-	// 	const shop = new Shop('Shop One', items)
-	// 	expect(shop.name).toEqual('Shop One')
-	// 	expect(shop.items.length).toEqual(3)	
-	// })
+	it('When a Shop is instantiated with only "name" parameter, "items" field should be an empty array', () => {
+		const shop = new Shop('Shop One')
+		expect(shop.name).toEqual('Shop One')
+		expect(Array.isArray(shop.items)).toEqual(true)
+		expect(shop.items.length).toEqual(0)
+	})
 
 
 })
