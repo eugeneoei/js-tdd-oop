@@ -10,6 +10,12 @@ class Item {
 		this.sellIn -= 1
 	}
 
+	reduceQuality() {
+		if (this.sellIn >= 0) {
+			this.quality -= 1
+		}
+	}
+
 }
 
 module.exports = {

@@ -21,7 +21,7 @@ describe('Item', () => {
 		const item = new Item('Item One', 1, 1)
 		item.reduceSellIn()
 		item.reduceQuality()
-		expect(item.quality).toEqual(1)
+		expect(item.quality).toEqual(0)
 	})
 
 })
