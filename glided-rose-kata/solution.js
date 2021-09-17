@@ -40,7 +40,6 @@ class Item {
 			} else {
 				this.quality += 1
 			}
-
 			this.checkMaximumQuality()
 
 		} else if (this.name === sulfuras) {
@@ -52,6 +51,7 @@ class Item {
 			if (this.sellIn >= 0) {
 				this.quality -= 1
 				this.checkMinimumQuality()
+				this.checkMaximumQuality()
 			} else {
 				this.quality *= 0.5
 			}
