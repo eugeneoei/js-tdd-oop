@@ -65,22 +65,26 @@ describe('Item', () => {
 	})
 
 	it('An item\'s quality should never be < 0', () => {
+		// arrange
 		const item = new Item('Item One', 10, 4)
 		const expectedValues = [
 			{ sellIn: 9, quality: 3 },
 			{ sellIn: 8, quality: 2 },
 			{ sellIn: 7, quality: 1 },
+			//
 			{ sellIn: 6, quality: 0 },
 			{ sellIn: 5, quality: 0 },
 			{ sellIn: 4, quality: 0 }
 		]
+
+		
 		expectedValues.forEach(expectedValue => {
-			item.reduceSellIn()
-			item.updateQuality()
-			expect(item.sellIn).toEqual(expectedValue.sellIn)
-			expect(item.quality).toEqual(expectedValue.quality)
-			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
-			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
+			item.reduceSellIn() // act
+			item.updateQuality() // act
+			expect(item.sellIn).toEqual(expectedValue.sellIn) // assert
+			expect(item.quality).toEqual(expectedValue.quality) // assert
+			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue) // assert
+			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue) // assert
 		})
 	})
 
@@ -277,7 +281,7 @@ describe('Shop', () => {
 			new Item('Item Three', 24, 18),
 			new Item('Item Four', 0, 18)
 		]
-		expectedValues = [
+		const expectedValues = [
 			{ sellIn: 11, quality: 41 },
 			{ sellIn: 4, quality: 50 },
 			{ sellIn: 2, quality: 43 },
@@ -293,9 +297,10 @@ describe('Shop', () => {
 			{ sellIn: 23, quality: 17 },
 			{ sellIn: -1, quality: 9 }
 		]
-
 		const shop = new Shop('Shop One', items)
-		shop.updateItemsQuality()
+
+		shop.updateItemsQuality() // act 
+
 		const shopItems = shop.items
 		shop.items.forEach((item, index) => {
 			expect(item.sellIn).toEqual(expectedValues[index]['sellIn'])
