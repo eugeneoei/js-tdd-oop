@@ -25,12 +25,14 @@ const convert = num => {
 		10: 'X'
 	}
 
-	if (num < 5) {
+	if (num <= 3) {
 		let answer = ''
 		for (let i = 0; i < num; i++) {
 			answer += 'I'
 		}
 		return answer
+	} else if (num === 4) {
+		return 'IV'
 	} else {
 		return numberMapping[num]
 	}
