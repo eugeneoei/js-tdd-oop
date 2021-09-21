@@ -18,6 +18,11 @@ describe('Convert', () => {
 	// 	expect(answer).toEqual('III')
 	// })
 
+	it('Should return \"IV\" if argument is 4', () => {
+		const answer = convert(4)
+		expect(answer).toEqual('IV')
+	})	
+
 	it('Should return "V" if argument is 5', () => {
 		const answer = convert(5)
 		expect(answer).toEqual('V')
