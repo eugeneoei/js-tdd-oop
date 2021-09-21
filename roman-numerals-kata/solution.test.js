@@ -33,4 +33,10 @@ describe('Convert', () => {
 		expect(answer).toEqual('X')
 	})
 
+	it('Should return "XI" if argument is 11', () => {
+		const answer = convert(11)
+		expect(answer).toEqual('XI')
+	})
+
 })
+
