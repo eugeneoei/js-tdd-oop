@@ -24,6 +24,7 @@
 // => look at numbers 1 - 10 first then 11 - 20
 
 const numberMapping = {
+	0: '',
 	1: 'I',
 	2: 'II',
 	3: 'III',
@@ -36,9 +37,21 @@ const numberMapping = {
 	10: 'X',
 }
 
+const formSymbols = count => {
+	let answer = ''
+	for (let i = 0; i < count; i++) {
+		answer += numberMapping[10]
+	}
+	return answer
+}
+
 const convert = num => {
 
-	return numberMapping[num]
+	// return numberMapping[num]
+
+	const numberOfTens = Math.floor(num / 10)
+	const numberOfOnes = num % 10
+	return `${formSymbols(numberOfTens)}${numberMapping[numberOfOnes]}`
 
 }
 
