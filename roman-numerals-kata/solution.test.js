@@ -38,5 +38,15 @@ describe('Convert', () => {
 		expect(answer).toEqual('XI')
 	})
 
+	it('Should return "XXIV" if argument is 24', () => {
+		const answer = convert(24)
+		expect(answer).toEqual('XXIV')
+	})
+
+	it('Should return "XXXIX" if argument is 39', () => {
+		const answer = convert(39)
+		expect(answer).toEqual('XXXIX')
+	})
+
 })
 
