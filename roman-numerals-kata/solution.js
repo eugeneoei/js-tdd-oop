@@ -65,7 +65,6 @@ const generateSymbols = (value, baseSymbol, midSymbol, peakSymbol) => {
 const convert = num => {
 
 	// return numberMapping[num]
-
 	const numberOfTens = Math.floor(num / 10)
 	const numberOfOnes = num % 10
 	return `${
