@@ -73,7 +73,12 @@ describe('Convert', () => {
 		expect(answer).toEqual('CIX')
 	})
 
-	it('Should return "CIX" if argument is 141', () => {
+	it('Should return "CIX" if argument is 238', () => {
+		const answer = convert(109)
+		expect(answer).toEqual('CIX')
+	})
+
+	it('Should return "CIX" if argument is 399', () => {
 		const answer = convert(109)
 		expect(answer).toEqual('CIX')
 	})
