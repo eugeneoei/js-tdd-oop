@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1632271082095" clover="3.2.0">
-  <project timestamp="1632271082095" name="All files">
+<coverage generated="1632302504114" clover="3.2.0">
+  <project timestamp="1632302504114" name="All files">
     <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="10" coveredelements="10" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
     <file name="solution.js" path="/Users/eugeneoei/Developer/study/js-tdd-oop/roman-numerals-kata/solution.js">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="40" count="1" type="stmt"/>
-      <line num="42" count="18" type="stmt"/>
-      <line num="62" count="18" type="stmt"/>
+      <line num="42" count="22" type="stmt"/>
+      <line num="62" count="22" type="stmt"/>
       <line num="65" count="1" type="stmt"/>
-      <line num="69" count="9" type="stmt"/>
-      <line num="70" count="9" type="stmt"/>
-      <line num="71" count="9" type="stmt"/>
+      <line num="69" count="11" type="stmt"/>
+      <line num="70" count="11" type="stmt"/>
+      <line num="71" count="11" type="stmt"/>
       <line num="79" count="1" type="stmt"/>
     </file>
   </project>
