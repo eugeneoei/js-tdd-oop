@@ -68,19 +68,19 @@ describe('Convert', () => {
 		expect(answer).toEqual('CIX')
 	})
 
-	it('Should return "CIX" if argument is 129', () => {
-		const answer = convert(109)
-		expect(answer).toEqual('CIX')
+	it('Should return "CXXIX" if argument is 129', () => {
+		const answer = convert(129)
+		expect(answer).toEqual('CXXIX')
 	})
 
-	it('Should return "CIX" if argument is 238', () => {
-		const answer = convert(109)
-		expect(answer).toEqual('CIX')
+	it('Should return "CCXXXVIII" if argument is 238', () => {
+		const answer = convert(238)
+		expect(answer).toEqual('CCXXXVIII')
 	})
 
-	it('Should return "CIX" if argument is 399', () => {
-		const answer = convert(109)
-		expect(answer).toEqual('CIX')
+	it('Should return "CCCIXIX" if argument is 399', () => {
+		const answer = convert(399)
+		expect(answer).toEqual('CCCIXIX')
 	})
 
 })
