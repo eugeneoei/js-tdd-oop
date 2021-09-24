@@ -93,7 +93,10 @@ describe('Convert', () => {
 		expect(answer).toEqual('CMXCIX')
 	})
 
-	
+	it('Should return "M" if argument is 1000', () => {
+		const answer = convert(1000)
+		expect(answer).toEqual('M')
+	})
 
 })
 
