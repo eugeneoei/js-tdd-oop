@@ -80,8 +80,20 @@ describe('Convert', () => {
 
 	it('Should return "CCCIXIX" if argument is 399', () => {
 		const answer = convert(399)
-		expect(answer).toEqual('CCCIXIX')
+		expect(answer).toEqual('CCCXCIX')
 	})
+
+	it('Should return "CDLVI" if argument is 456', () => {
+		const answer = convert(456)
+		expect(answer).toEqual('CDLVI')
+	})
+
+	it('Should return "CMXCIX" if argument is 999', () => {
+		const answer = convert(999)
+		expect(answer).toEqual('CMXCIX')
+	})
+
+	
 
 })
 

@@ -50,7 +50,7 @@ const generateSymbols = (value, baseSymbol, midSymbol, peakSymbol) => {
 		7: midSymbol + baseSymbol + baseSymbol,
 		8: midSymbol + baseSymbol + baseSymbol + baseSymbol,
 		9: baseSymbol + peakSymbol,
-		10: peakSymbol
+		// 10: peakSymbol
 	}
 
 	// let answer = ''
@@ -65,9 +65,21 @@ const generateSymbols = (value, baseSymbol, midSymbol, peakSymbol) => {
 const convert = num => {
 
 	// return numberMapping[num]
-	const numberOfTens = Math.floor(num / 10)
+	const numberOfHundreds = Math.floor(num / 100)
+	const numberOfTens = Math.floor(
+		(num - (numberOfHundreds * 100))
+		/
+		10
+	)
 	const numberOfOnes = num % 10
+
+	// console.log(numberOfHundreds)
+	// console.log(numberOfTens)
+	// console.log(numberOfOnes)
+
 	return `${
+		generateSymbols(numberOfHundreds, 'C', 'D', 'M') // accounts for multiples of 100s from 100 - 999
+	}${
 		generateSymbols(numberOfTens, 'X', 'L', 'C') // accounts for multiples of 10s from 11 - 100
 	}${
 		generateSymbols(numberOfOnes, 'I', 'V', 'X') // accounts for 1 - 10

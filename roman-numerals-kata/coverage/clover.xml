@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1632314454175" clover="3.2.0">
-  <project timestamp="1632314454176" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="10" coveredelements="10" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
+<coverage generated="1632353669722" clover="3.2.0">
+  <project timestamp="1632353669722" name="All files">
+    <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="11" coveredelements="11" complexity="0" loc="9" ncloc="9" packages="1" files="1" classes="1"/>
     <file name="solution.js" path="/Users/eugeneoei/Developer/study/js-tdd-oop/roman-numerals-kata/solution.js">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="40" count="1" type="stmt"/>
-      <line num="42" count="30" type="stmt"/>
-      <line num="62" count="30" type="stmt"/>
+      <line num="42" count="51" type="stmt"/>
+      <line num="62" count="51" type="stmt"/>
       <line num="65" count="1" type="stmt"/>
-      <line num="68" count="15" type="stmt"/>
-      <line num="69" count="15" type="stmt"/>
-      <line num="70" count="15" type="stmt"/>
-      <line num="78" count="1" type="stmt"/>
+      <line num="68" count="17" type="stmt"/>
+      <line num="69" count="17" type="stmt"/>
+      <line num="74" count="17" type="stmt"/>
+      <line num="80" count="17" type="stmt"/>
+      <line num="90" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
