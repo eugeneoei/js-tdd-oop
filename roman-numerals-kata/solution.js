@@ -1,22 +1,3 @@
-// 1 - I
-// 5 - V
-// 10 - X
-// 50 - L
-// 100 - C
-// 500 - D
-// 1000 - M
-
-// I
-// II
-// III
-// IV
-// V
-// VI
-// VII
-// VIII
-// IX
-// X
-
 // patterns
 // => no symbol is repeated more than 3 times for any given integer ???
 // => work with range of 10s???
@@ -50,35 +31,20 @@ const generateSymbols = (value, baseSymbol, midSymbol, peakSymbol) => {
 		7: midSymbol + baseSymbol + baseSymbol,
 		8: midSymbol + baseSymbol + baseSymbol + baseSymbol,
 		9: baseSymbol + peakSymbol,
-		// 10: peakSymbol
+		10: peakSymbol
 	}
-
-	// let answer = ''
-	// for (let i = 0; i < count; i++) {
-	// 	answer += numberMapping[10]
-	// }
-	// return answer
 
 	return symbolMapping[value]
 }
 
 const convert = num => {
 
-	// return numberMapping[num]
-	const numberOfHundreds = Math.floor(num / 100)
-	const numberOfTens = Math.floor(
-		(num - (numberOfHundreds * 100))
-		/
-		10
-	)
+	const numberOfHundreds = Math.floor((num / 100) % 100)
+	const numberOfTens = Math.floor((num / 10) % 10)
 	const numberOfOnes = num % 10
 
-	// console.log(numberOfHundreds)
-	// console.log(numberOfTens)
-	// console.log(numberOfOnes)
-
 	return `${
-		generateSymbols(numberOfHundreds, 'C', 'D', 'M') // accounts for multiples of 100s from 100 - 999
+		generateSymbols(numberOfHundreds, 'C', 'D', 'M') // accounts for multiples of 100s from 101 - 1000
 	}${
 		generateSymbols(numberOfTens, 'X', 'L', 'C') // accounts for multiples of 10s from 11 - 100
 	}${
