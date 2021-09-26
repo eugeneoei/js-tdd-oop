@@ -62,7 +62,7 @@ it('Should print "1", "2", "Fizz", "4", "Buzz", "6", "7", "8", "9" and "FizzBuzz
 	expect(console.log).toHaveBeenNthCalledWith(7, 7)
 	expect(console.log).toHaveBeenNthCalledWith(8, 8)
 	expect(console.log).toHaveBeenNthCalledWith(9, 'Fizz')
-	expect(console.log).toHaveBeenNthCalledWith(10, 'FizzBuzz')
+	expect(console.log).toHaveBeenNthCalledWith(10, 'Buzz')
 	expect(console.log).toHaveBeenCalledTimes(num)
 })
 
