@@ -17,6 +17,16 @@ it('Should print "1" and "2" if number is 2', () => {
 	expect(console.log).toHaveBeenCalledWith(2)
 })
 
+it('Should print "1", "2" and "Fizz" if number is 3', () => {
+	console.log = jest.fn()
+
+	solution(3)
+	
+	expect(console.log).toHaveBeenCalledWith(1)
+	expect(console.log).toHaveBeenCalledWith(2)
+	expect(console.log).toHaveBeenCalledWith("Fizz")
+})
+
 
 
 

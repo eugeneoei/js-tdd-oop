@@ -1,6 +1,6 @@
 const solution = num => {
-	if (num === 1) {
-		console.log(num)
+	for (let i = 1; i < num + 1; i++) {
+		console.log(i)
 	}
 }
 
