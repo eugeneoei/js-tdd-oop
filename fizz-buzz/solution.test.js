@@ -66,3 +66,29 @@ it('Should print "1", "2", "Fizz", "4", "Buzz", "6", "7", "8", "9" and "FizzBuzz
 	expect(console.log).toHaveBeenCalledTimes(num)
 })
 
+it('Should print 1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14 and "FizzBuzz" if number is 10', () => {
+	const num = 15
+	console.log = jest.fn()
+
+	solution(num)
+	
+	expect(console.log).toHaveBeenNthCalledWith(1, 1)
+	expect(console.log).toHaveBeenNthCalledWith(2, 2)
+	expect(console.log).toHaveBeenNthCalledWith(3, 'Fizz')
+	expect(console.log).toHaveBeenNthCalledWith(4, 4)
+	expect(console.log).toHaveBeenNthCalledWith(5, 'Buzz')
+	expect(console.log).toHaveBeenNthCalledWith(6, 'Fizz')
+	expect(console.log).toHaveBeenNthCalledWith(7, 7)
+	expect(console.log).toHaveBeenNthCalledWith(8, 8)
+	expect(console.log).toHaveBeenNthCalledWith(9, 'Fizz')
+	expect(console.log).toHaveBeenNthCalledWith(10, 'Buzz')
+	expect(console.log).toHaveBeenNthCalledWith(11, 11)
+	expect(console.log).toHaveBeenNthCalledWith(12, 'Fizz')
+	expect(console.log).toHaveBeenNthCalledWith(13, 13)
+	expect(console.log).toHaveBeenNthCalledWith(14, 14)
+	expect(console.log).toHaveBeenNthCalledWith(15, 'FizzBuzz')
+	expect(console.log).toHaveBeenCalledTimes(num)
+})
+
+
+
