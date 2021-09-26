@@ -24,7 +24,7 @@ it('Should print "1", "2" and "Fizz" if number is 3', () => {
 	
 	expect(console.log).toHaveBeenCalledWith(1)
 	expect(console.log).toHaveBeenCalledWith(2)
-	expect(console.log).toHaveBeenCalledWith("Fizz")
+	expect(console.log).toHaveBeenCalledWith('Fizz')
 })
 
 
