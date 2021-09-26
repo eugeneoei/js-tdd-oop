@@ -6,6 +6,7 @@ it('Should print "1" if number is 1', () => {
 	solution(1)
 	
 	expect(console.log).toHaveBeenCalledWith(1)
+	expect(console.log).toHaveBeenCalledTimes(1)
 })
 
 it('Should print "1" and "2" if number is 2', () => {
@@ -15,6 +16,7 @@ it('Should print "1" and "2" if number is 2', () => {
 	
 	expect(console.log).toHaveBeenCalledWith(1)
 	expect(console.log).toHaveBeenCalledWith(2)
+	expect(console.log).toHaveBeenCalledTimes(2)
 })
 
 it('Should print "1", "2" and "Fizz" if number is 3', () => {
@@ -23,8 +25,9 @@ it('Should print "1", "2" and "Fizz" if number is 3', () => {
 	solution(3)
 	
 	expect(console.log).toHaveBeenCalledWith(1)
-	expect(console.log).toHaveBeenCalledWith(2)
 	expect(console.log).toHaveBeenCalledWith('Fizz')
+	expect(console.log).toHaveBeenCalledWith(2)
+	expect(console.log).toHaveBeenCalledTimes(3)
 })
 
 
