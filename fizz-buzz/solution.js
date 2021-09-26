@@ -1,6 +1,6 @@
-const solution = number => {
-	if (number === 1) {
-		return 'Fizz'
+const solution = num => {
+	if (num === 1) {
+		return num
 	}
 }
 
