@@ -1,6 +1,6 @@
 const solution = num => {
 	if (num === 1) {
-		return num
+		console.log(num)
 	}
 }
 
