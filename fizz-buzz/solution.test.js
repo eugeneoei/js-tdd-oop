@@ -6,7 +6,6 @@ it('Should print "1" if number is 1', () => {
 
 	solution(num)
 	
-	expect(console.log).toHaveBeenCalledWith(1)
 	expect(console.log).toHaveBeenNthCalledWith(1, 1)
 	expect(console.log).toHaveBeenCalledTimes(num)
 })
@@ -17,8 +16,6 @@ it('Should print "1" and "2" if number is 2', () => {
 
 	solution(num)
 	
-	expect(console.log).toHaveBeenCalledWith(1)
-	expect(console.log).toHaveBeenCalledWith(2)
 	expect(console.log).toHaveBeenNthCalledWith(1, 1)
 	expect(console.log).toHaveBeenNthCalledWith(2, 2)
 	expect(console.log).toHaveBeenCalledTimes(num)
@@ -30,9 +27,6 @@ it('Should print "1", "2" and "Fizz" if number is 3', () => {
 
 	solution(num)
 	
-	expect(console.log).toHaveBeenCalledWith(1)
-	expect(console.log).toHaveBeenCalledWith(2)
-	expect(console.log).toHaveBeenCalledWith('Fizz')
 	expect(console.log).toHaveBeenNthCalledWith(1, 1)
 	expect(console.log).toHaveBeenNthCalledWith(2, 2)
 	expect(console.log).toHaveBeenNthCalledWith(3, 'Fizz')
@@ -45,11 +39,6 @@ it('Should print "1", "2", "Fizz", "4", "Buzz" if number is 5', () => {
 
 	solution(num)
 	
-	expect(console.log).toHaveBeenCalledWith(1)
-	expect(console.log).toHaveBeenCalledWith(2)
-	expect(console.log).toHaveBeenCalledWith('Fizz')
-	expect(console.log).toHaveBeenCalledWith(4)
-	expect(console.log).toHaveBeenCalledWith('Buzz')
 	expect(console.log).toHaveBeenNthCalledWith(1, 1)
 	expect(console.log).toHaveBeenNthCalledWith(2, 2)
 	expect(console.log).toHaveBeenNthCalledWith(3, 'Fizz')
