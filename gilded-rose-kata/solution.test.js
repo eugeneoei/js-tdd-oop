@@ -313,5 +313,3 @@ describe('Shop', () => {
 
 
 // - Cohesion. Coupling
-// - Don’t have to test constructors
-// - Leave blank between arrange act assert
