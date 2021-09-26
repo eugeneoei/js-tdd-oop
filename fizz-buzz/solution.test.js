@@ -8,6 +8,15 @@ it('Should print "1" if number is 1', () => {
 	expect(console.log).toHaveBeenCalledWith(1)
 })
 
+it('Should print "1" and "2" if number is 2', () => {
+	console.log = jest.fn()
+
+	solution(2)
+	
+	expect(console.log).toHaveBeenCalledWith(1)
+	expect(console.log).toHaveBeenCalledWith(2)
+})
+
 
 
 
