@@ -17,4 +17,15 @@ describe('Combination', () => {
 
     })
 
+    it('Should return [] when available wardrobe available sizes is 75', () => {
+
+        const availableSizes = [75]
+        const expectedResult = []
+
+        const result = combination(availableSpace, availableSizes)
+
+        expect(result).toEqual(expectedResult)
+
+    })
+
 })
