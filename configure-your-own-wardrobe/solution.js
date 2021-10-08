@@ -3,9 +3,22 @@ const combination = (
     availableSizes
 ) => {
 
-    return [
-        [50, 50, 50, 50, 50]
-    ]
+    const result = []
+
+    for (let i = 0; i < availableSizes.length; i++) {
+        const size = availableSizes[i]
+        if (availableSpace % size === 0) {
+            const numberOfSizeInCombination = availableSpace/size
+            result.push(
+                Array.from(
+                    { length: numberOfSizeInCombination },
+                    () => 50
+                )
+            )
+        }
+    }
+
+    return result
 
 }
 
