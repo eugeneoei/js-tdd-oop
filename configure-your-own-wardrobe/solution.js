@@ -3,7 +3,7 @@ const combination = (
 	availableSizes
 ) => {
 
-	availableSizes.sort()
+	availableSizes.sort((a, b) => a - b)
 	const combinations = []
 
 	const findCombo = (index, target, combo) => {
