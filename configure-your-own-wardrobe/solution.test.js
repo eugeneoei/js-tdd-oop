@@ -1,4 +1,4 @@
-const { findCombinations } = require('./solution')
+const { findCombinations, findCheapestCombination } = require('./solution')
 
 const availableSpace = 250
 const prices = {
