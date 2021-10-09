@@ -187,3 +187,16 @@ describe('ScoreKeeper class Team B score method', () => {
 	})
 
 })
+
+describe('ScoreKeeper class getScore method', () => {
+
+	it('should be 000:000 before any team scores a point', () => {
+
+		const scoreKeeper = new ScoreKeeper()
+		const expectedResult = '000:000'
+
+		expect(scoreKeeper.getScore()).toBe(expectedResult)
+
+	})
+
+})
