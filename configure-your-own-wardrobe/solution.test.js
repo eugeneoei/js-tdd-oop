@@ -148,4 +148,16 @@ describe('Cheapest Combination', () => {
 
 	})
 
+	it(`Should return 242 when available wardrobe sizes is [50, 75]`, () => {
+
+		const availableSizes = [50, 75]
+		const expectedResult = 242
+
+		const combinations = findCombinations(availableSpace, availableSizes)
+		const priceOfCheapestCombination = findCheapestCombination(combinations, prices)
+
+		expect(priceOfCheapestCombination).toBe(expectedResult)
+
+	})
+
 })
