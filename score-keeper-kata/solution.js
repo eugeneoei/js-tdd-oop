@@ -34,6 +34,10 @@ class ScoreKeeper {
 		this.#teamBScore += 1
 	}
 
+	scoreTeamB2() {
+		this.#teamBScore += 2
+	}
+
 	getTeamAScore() {
 		return this.formatScore(this.#teamAScore)
 	}
