@@ -24,4 +24,15 @@ describe('Team A score method', () => {
 
 	})
 
+	it('should return 003 when scoreTeamA3 method is called once', () => {
+
+		const scoreKeeper = new ScoreKeeper()
+		const expectedResult = '003'
+
+		scoreKeeper.scoreTeamA3()
+
+		expect(scoreKeeper.getTeamAScore()).toBe(expectedResult)
+
+	})
+
 })
