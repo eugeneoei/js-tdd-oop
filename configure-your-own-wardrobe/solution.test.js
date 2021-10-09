@@ -91,4 +91,27 @@ describe('Combination', () => {
 
 	})
 
+	it(`Should return [
+		[50, 50, 50, 50, 50],
+		[50, 50, 50, 100],
+		[50, 50, 75, 75],
+		[50, 100, 100],
+		[75, 75, 100]
+	] when available wardrobe sizes is [50, 75, 100, 120]`, () => {
+
+		const availableSizes = [50, 75, 100]
+		const expectedResult = [
+			[50, 50, 50, 50, 50],
+			[50, 50, 50, 100],
+			[50, 50, 75, 75],
+			[50, 100, 100],
+			[75, 75, 100]
+		]
+
+		const result = combination(availableSpace, availableSizes)
+
+		expect(result).toEqual(expectedResult)
+
+	})
+
 })
