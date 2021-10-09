@@ -1,6 +1,6 @@
 const ScoreKeeper = require('./solution')
 
-describe('Team A score method', () => {
+describe('ScoreKeeper class Team A score method', () => {
 
 	it('should return 001 when scoreTeamA1 method is called once', () => {
 
@@ -43,6 +43,28 @@ describe('Team A score method', () => {
 		scoreKeeper.scoreTeamA1()
 		scoreKeeper.scoreTeamA2()
 		scoreKeeper.scoreTeamA3()
+
+		expect(scoreKeeper.getTeamAScore()).toBe(expectedResult)
+
+	})
+
+	it('should be 132 when scoreTeamA1 is called 8 times, scoreTeamA2 is called 17 times and scoreTeamA3 is called 30 times', () => {
+
+		const scoreKeeper = new ScoreKeeper()
+		const numberOfTimesScoreTeamA1IsCalled = 8
+		const numberOfTimesScoreTeamA2IsCalled = 17
+		const numberOfTimesScoreTeamA3IsCalled = 30
+		const expectedResult = '132'
+
+		for (let i = 0; i < numberOfTimesScoreTeamA1IsCalled; i++) {
+			scoreKeeper.scoreTeamA1()
+		}
+		for (let j = 0; j < numberOfTimesScoreTeamA2IsCalled; j++) {
+			scoreKeeper.scoreTeamA2()
+		}
+		for (let k = 0; k < numberOfTimesScoreTeamA3IsCalled; k++) {
+			scoreKeeper.scoreTeamA3()
+		}
 
 		expect(scoreKeeper.getTeamAScore()).toBe(expectedResult)
 
