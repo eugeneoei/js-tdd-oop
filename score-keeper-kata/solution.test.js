@@ -142,4 +142,26 @@ describe('ScoreKeeper class Team B score method', () => {
 
 	})
 
+	it('should be 057 when scoreTeamB1 is called 5 times, scoreTeamB2 is called 8 times and scoreTeamB3 is called 12 times', () => {
+
+		const scoreKeeper = new ScoreKeeper()
+		const numberOfTimesScoreTeamB1IsCalled = 5
+		const numberOfTimesScoreTeamB2IsCalled = 8
+		const numberOfTimesScoreTeamB3IsCalled = 12
+		const expectedResult = '057'
+
+		for (let i = 0; i < numberOfTimesScoreTeamB1IsCalled; i++) {
+			scoreKeeper.scoreTeamB1()
+		}
+		for (let j = 0; j < numberOfTimesScoreTeamB2IsCalled; j++) {
+			scoreKeeper.scoreTeamB2()
+		}
+		for (let k = 0; k < numberOfTimesScoreTeamB3IsCalled; k++) {
+			scoreKeeper.scoreTeamB3()
+		}
+
+		expect(scoreKeeper.getTeamBScore()).toBe(expectedResult)
+
+	})
+
 })
