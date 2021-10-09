@@ -26,6 +26,19 @@ const findCombinations = (
 
 }
 
+const findCheapestCombination = (combinations, prices) => {
+
+	const combinationsPrices = combinations.map(combination => (
+		combination.reduce(
+			(previousValue, size) => previousValue + prices[size],
+			0
+		)
+	))
+	return Math.min(combinationsPrices)
+
+}
+
 module.exports = {
-	findCombinations
+	findCombinations,
+	findCheapestCombination
 }
