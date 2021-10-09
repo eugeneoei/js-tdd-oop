@@ -1,6 +1,12 @@
-const { combination } = require('./solution')
+const { findCombinations } = require('./solution')
 
 const availableSpace = 250
+const prices = {
+	50: 59,
+	75: 62,
+	100: 90,
+	120: 111
+}
 
 describe('Combination', () => {
 
@@ -11,7 +17,7 @@ describe('Combination', () => {
 			[50, 50, 50, 50, 50]
 		]
 
-		const result = combination(availableSpace, availableSizes)
+		const result = findCombinations(availableSpace, availableSizes)
 
 		expect(result).toEqual(expectedResult)
 
@@ -22,7 +28,7 @@ describe('Combination', () => {
 		const availableSizes = [75]
 		const expectedResult = []
 
-		const result = combination(availableSpace, availableSizes)
+		const result = findCombinations(availableSpace, availableSizes)
 
 		expect(result).toEqual(expectedResult)
 
@@ -39,7 +45,7 @@ describe('Combination', () => {
 			[50, 50, 75, 75]
 		]
 
-		const result = combination(availableSpace, availableSizes)
+		const result = findCombinations(availableSpace, availableSizes)
 
 		expect(result).toEqual(expectedResult)
 
@@ -62,7 +68,7 @@ describe('Combination', () => {
 			[75, 75, 100]
 		]
 
-		const result = combination(availableSpace, availableSizes)
+		const result = findCombinations(availableSpace, availableSizes)
 
 		expect(result).toEqual(expectedResult)
 
@@ -85,7 +91,7 @@ describe('Combination', () => {
 			[75, 75, 100]
 		]
 
-		const result = combination(availableSpace, availableSizes)
+		const result = findCombinations(availableSpace, availableSizes)
 
 		expect(result).toEqual(expectedResult)
 
@@ -108,9 +114,25 @@ describe('Combination', () => {
 			[75, 75, 100]
 		]
 
-		const result = combination(availableSpace, availableSizes)
+		const result = findCombinations(availableSpace, availableSizes)
 
 		expect(result).toEqual(expectedResult)
+
+	})
+
+})
+
+describe('Cheapest Combination', () => {
+
+	it('Should return 295 when available wardrobe sizes is [50]', () => {
+
+		const availableSizes = [50]
+		const expectedResult = 295
+
+		const combinations = findCombinations(availableSpace, availableSizes)
+		const priceOfCheapestCombination = findCheapestCombination(combinations, prices)
+
+		expect(priceOfCheapestCombination).toBe(expectedResult)
 
 	})
 
