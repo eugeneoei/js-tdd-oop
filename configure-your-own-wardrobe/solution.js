@@ -1,4 +1,4 @@
-const combination = (
+const findCombinations = (
 	availableSpace,
 	availableSizes
 ) => {
@@ -27,5 +27,5 @@ const combination = (
 }
 
 module.exports = {
-	combination
+	findCombinations
 }
