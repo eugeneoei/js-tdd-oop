@@ -38,7 +38,7 @@ const findCheapestCombination = (combinations, prices) => {
 			0
 		)
 	))
-	return Math.min(combinationsPrices)
+	return Math.min(...combinationsPrices)
 
 }
 
