@@ -28,6 +28,10 @@ const findCombinations = (
 
 const findCheapestCombination = (combinations, prices) => {
 
+	if (combinations.length === 0) {
+		return 0
+	}
+
 	const combinationsPrices = combinations.map(combination => (
 		combination.reduce(
 			(previousValue, size) => previousValue + prices[size],
