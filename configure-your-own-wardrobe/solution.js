@@ -9,7 +9,6 @@ const combination = (
 	const findCombo = (index, target, combo) => {
 		const currentSum = combo.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
 		if (currentSum === target) {
-			console.log('push')
 			combinations.push(combo)
 			return
 		}

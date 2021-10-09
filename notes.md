@@ -6,3 +6,5 @@ test('Hello World should return "Hello World!"', () => {
 	expect(HelloWorld()).toBe('Oh oh ...')
 })
 ```
+
+- Caching mechanisms - 4 in total. Know what are the tradeoffs
