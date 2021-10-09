@@ -11,7 +11,7 @@ describe('Scorekeeper Class', () => {
 
             scoreKeeper.scoreTeamA1()
 
-            expecte(scoreKeeper.getTeamAScore()).toBe(expectedResult)
+            expect(scoreKeeper.getTeamAScore()).toBe(expectedResult)
 
         })
 
