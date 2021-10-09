@@ -2,7 +2,7 @@ const ScoreKeeper = require('./solution')
 
 describe('ScoreKeeper class Team A score method', () => {
 
-	it('should return 001 when scoreTeamA1 method is called once', () => {
+	it('should be 001 when scoreTeamA1 method is called once', () => {
 
 		const scoreKeeper = new ScoreKeeper()
 		const expectedResult = '001'
@@ -13,7 +13,7 @@ describe('ScoreKeeper class Team A score method', () => {
 
 	})
 
-	it('should return 002 when scoreTeamA2 method is called once', () => {
+	it('should be 002 when scoreTeamA2 method is called once', () => {
 
 		const scoreKeeper = new ScoreKeeper()
 		const expectedResult = '002'
@@ -24,7 +24,7 @@ describe('ScoreKeeper class Team A score method', () => {
 
 	})
 
-	it('should return 003 when scoreTeamA3 method is called once', () => {
+	it('should be 003 when scoreTeamA3 method is called once', () => {
 
 		const scoreKeeper = new ScoreKeeper()
 		const expectedResult = '003'
@@ -35,7 +35,7 @@ describe('ScoreKeeper class Team A score method', () => {
 
 	})
 
-	it('should return 006 when scoreTeamA1, scoreTeamA2 and scoreTeamA3 methods are called once each', () => {
+	it('should be 006 when scoreTeamA1, scoreTeamA2 and scoreTeamA3 methods are called once each', () => {
 
 		const scoreKeeper = new ScoreKeeper()
 		const expectedResult = '006'
@@ -67,6 +67,21 @@ describe('ScoreKeeper class Team A score method', () => {
 		}
 
 		expect(scoreKeeper.getTeamAScore()).toBe(expectedResult)
+
+	})
+
+})
+
+describe('ScoreKeeper class Team B score method', () => {
+
+	it('should be 001 when scoreTeamB1 method is called once', () => {
+
+		const scoreKeeper = new ScoreKeeper()
+		const expectedResult = '001'
+
+		scoreKeeper.scoreTeamB1()
+
+		expect(scoreKeeper.getTeamBScore()).toBe(expectedResult)
 
 	})
 
