@@ -188,12 +188,49 @@ describe('ScoreKeeper class Team B score method', () => {
 
 })
 
-describe('ScoreKeeper class getScore method', () => {
+describe('ScoreKeeper class getScore', () => {
 
 	it('should be 000:000 before any team scores a point', () => {
 
 		const scoreKeeper = new ScoreKeeper()
 		const expectedResult = '000:000'
+
+		expect(scoreKeeper.getScore()).toBe(expectedResult)
+
+	})
+
+	it(`should be 036:503 when
+	- when scoreTeamA1 is called 2 times, scoreTeamA2 is called 5 times and scoreTeamA3 is called 8 times
+	- when scoreTeamB1 is called 88 times, scoreTeamB2 is called 20 times and scoreTeamB3 is called 125 times
+	`, () => {
+
+		const scoreKeeper = new ScoreKeeper()
+		const numberOfTimesScoreTeamA1IsCalled = 2
+		const numberOfTimesScoreTeamA2IsCalled = 5
+		const numberOfTimesScoreTeamA3IsCalled = 8
+		const numberOfTimesScoreTeamB1IsCalled = 88
+		const numberOfTimesScoreTeamB2IsCalled = 20
+		const numberOfTimesScoreTeamB3IsCalled = 125
+		const expectedResult = '036:503'
+
+		for (let i = 0; i < numberOfTimesScoreTeamA1IsCalled; i++) {
+			scoreKeeper.scoreTeamA1()
+		}
+		for (let j = 0; j < numberOfTimesScoreTeamA2IsCalled; j++) {
+			scoreKeeper.scoreTeamA2()
+		}
+		for (let k = 0; k < numberOfTimesScoreTeamA3IsCalled; k++) {
+			scoreKeeper.scoreTeamA3()
+		}
+		for (let l = 0; l < numberOfTimesScoreTeamB1IsCalled; l++) {
+			scoreKeeper.scoreTeamB1()
+		}
+		for (let m = 0; m < numberOfTimesScoreTeamB2IsCalled; m++) {
+			scoreKeeper.scoreTeamB2()
+		}
+		for (let n = 0; n < numberOfTimesScoreTeamB3IsCalled; n++) {
+			scoreKeeper.scoreTeamB3()
+		}
 
 		expect(scoreKeeper.getScore()).toBe(expectedResult)
 
