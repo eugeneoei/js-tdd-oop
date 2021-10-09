@@ -1,27 +1,32 @@
 const combination = (
-    availableSpace,
-    availableSizes
+	availableSpace,
+	availableSizes
 ) => {
 
-    const result = []
+	availableSizes.sort()
+	const combinations = []
 
-    for (let i = 0; i < availableSizes.length; i++) {
-        const size = availableSizes[i]
-        if (availableSpace % size === 0) {
-            const numberOfSizeInCombination = availableSpace/size
-            result.push(
-                Array.from(
-                    { length: numberOfSizeInCombination },
-                    () => 50
-                )
-            )
-        }
-    }
+	const findCombo = (index, target, combo) => {
+		const currentSum = combo.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
+		if (currentSum === target) {
+			console.log('push')
+			combinations.push(combo)
+			return
+		}
+		for (let i = index; i < availableSizes.length; i++) {
+			const currentSize = availableSizes[i]
+			if (currentSum + currentSize <= target) { // ensures sum of combo does not exceed target
+				findCombo(i, target, [...combo, currentSize])
+			}
+		}
+	}
 
-    return result
+	findCombo(0, availableSpace, [])
+
+	return combinations
 
 }
 
 module.exports = {
-    combination
+	combination
 }
