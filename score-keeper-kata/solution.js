@@ -50,6 +50,10 @@ class ScoreKeeper {
 		return this.formatScore(this.#teamBScore)
 	}
 
+	getScore() {
+		return `${this.getTeamAScore()}:${this.getTeamBScore()}`
+	}
+
 }
 
 module.exports = ScoreKeeper
