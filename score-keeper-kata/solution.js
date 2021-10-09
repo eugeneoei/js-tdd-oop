@@ -1,34 +1,38 @@
 class ScoreKeeper {
 
-    #teamAScore
-    #teamBScore
+	#teamAScore
+	#teamBScore
 
-    constructor() {
-        this.#teamAScore = 0
-        this.#teamBScore = 0
-    }
+	constructor() {
+		this.#teamAScore = 0
+		this.#teamBScore = 0
+	}
 
-    formatScore(score) {
-        if (score < 10) {
-            return `00${score}`
-        } else if (score < 100) {
-            return `0${score}`
-        } else {
-            return `${score}`
-        }
-    }
+	formatScore(score) {
+		if (score < 10) {
+			return `00${score}`
+		} else if (score < 100) {
+			return `0${score}`
+		} else {
+			return `${score}`
+		}
+	}
 
-    scoreTeamA1() {
-        this.#teamAScore += 1
-    }
+	scoreTeamA1() {
+		this.#teamAScore += 1
+	}
 
-    scoreTeamA2() {
-        this.#teamAScore += 2
-    }
+	scoreTeamA2() {
+		this.#teamAScore += 2
+	}
 
-    getTeamAScore() {
-        return this.formatScore(this.#teamAScore)
-    }
+	scoreTeamA3() {
+		this.#teamAScore += 3
+	}
+
+	getTeamAScore() {
+		return this.formatScore(this.#teamAScore)
+	}
 
 }
 
