@@ -1,0 +1,14 @@
+{
+  "name": "mars-rover-problem",
+  "version": "1.0.0",
+  "description": "A squad of robotic rovers are to be landed by NASA on a plateau on Mars.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
