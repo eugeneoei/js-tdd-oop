@@ -10,7 +10,7 @@ describe('Rover', () => {
 
         rover.instruction('L')
 
-        expect(rover.getCurrentPosition()).toEqual('1 2 W')
+        expect(rover.getCurrentPosition()).toBe('1 2 W')
 
     })
 
@@ -22,7 +22,7 @@ describe('Rover', () => {
 
         rover.instruction('R')
 
-        expect(rover.getCurrentPosition()).toEqual('1 2 E')
+        expect(rover.getCurrentPosition()).toBe('1 2 E')
 
     })
 
@@ -34,7 +34,7 @@ describe('Rover', () => {
 
         rover.instruction('M')
 
-        expect(rover.getCurrentPosition()).toEqual('1 3 N')
+        expect(rover.getCurrentPosition()).toBe('1 3 N')
 
     })
 
@@ -46,7 +46,7 @@ describe('Rover', () => {
 
         rover.instruction('LMM')
 
-        expect(rover.getCurrentPosition()).toEqual('0 2 W')
+        expect(rover.getCurrentPosition()).toBe('0 2 W')
 
     })
 
@@ -62,7 +62,7 @@ describe('First Rover', () => {
 
         rover.instruction('LMLMLMLMM')
 
-        expect(rover.getCurrentPosition()).toEqual('1 3 N')
+        expect(rover.getCurrentPosition()).toBe('1 3 N')
 
     })
 
@@ -78,7 +78,7 @@ describe('Second Rover', () => {
 
         rover.instruction('MMRMMRMRRM')
 
-        expect(rover.getCurrentPosition()).toEqual('5 1 E')
+        expect(rover.getCurrentPosition()).toBe('5 1 E')
 
     })
 

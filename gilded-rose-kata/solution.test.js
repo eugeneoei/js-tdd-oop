@@ -19,22 +19,22 @@ describe('Item', () => {
 
 	it('On instance creation, "name", "sellIn" and "quality" fields should equal values passed to constructor', () => {
 		const item = new Item('Item One', 1, 1)
-		expect(item.name).toEqual('Item One')
-		expect(item.sellIn).toEqual(1)
-		expect(item.quality).toEqual(1)
+		expect(item.name).toBe('Item One')
+		expect(item.sellIn).toBe(1)
+		expect(item.quality).toBe(1)
 	})
 
 	it('Should reduce "sellIn" value by 1 at the end of the day', () => {
 		const item = new Item('Item One', 1, 1)
 		item.reduceSellIn()
-		expect(item.sellIn).toEqual(0)
+		expect(item.sellIn).toBe(0)
 	})
 
 	it('Should reduce "quality" by 1 if "sellIn" is >= 0', () => {
 		const item = new Item('Item One', 1, 1)
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.quality).toEqual(0)
+		expect(item.quality).toBe(0)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 	})
@@ -44,22 +44,22 @@ describe('Item', () => {
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(1)
-		expect(item.quality).toEqual(9)
+		expect(item.sellIn).toBe(1)
+		expect(item.quality).toBe(9)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(0)
-		expect(item.quality).toEqual(8)
+		expect(item.sellIn).toBe(0)
+		expect(item.quality).toBe(8)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(-1)
-		expect(item.quality).toEqual(4)
+		expect(item.sellIn).toBe(-1)
+		expect(item.quality).toBe(4)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 	})
@@ -77,12 +77,12 @@ describe('Item', () => {
 			{ sellIn: 4, quality: 0 }
 		]
 
-		
+
 		expectedValues.forEach(expectedValue => {
 			item.reduceSellIn() // act
 			item.updateQuality() // act
-			expect(item.sellIn).toEqual(expectedValue.sellIn) // assert
-			expect(item.quality).toEqual(expectedValue.quality) // assert
+			expect(item.sellIn).toBe(expectedValue.sellIn) // assert
+			expect(item.quality).toBe(expectedValue.quality) // assert
 			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue) // assert
 			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue) // assert
 		})
@@ -101,8 +101,8 @@ describe('Item', () => {
 		expectedValues.forEach(expectedValue => {
 			item.reduceSellIn()
 			item.updateQuality()
-			expect(item.sellIn).toEqual(expectedValue.sellIn)
-			expect(item.quality).toEqual(expectedValue.quality)
+			expect(item.sellIn).toBe(expectedValue.sellIn)
+			expect(item.quality).toBe(expectedValue.quality)
 			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 		})
@@ -112,8 +112,8 @@ describe('Item', () => {
 		const item = new Item(agedBrie, 20, 10)
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(19)
-		expect(item.quality).toEqual(11)
+		expect(item.sellIn).toBe(19)
+		expect(item.quality).toBe(11)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 	})
@@ -123,22 +123,22 @@ describe('Item', () => {
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(11)
-		expect(item.quality).toEqual(11)
+		expect(item.sellIn).toBe(11)
+		expect(item.quality).toBe(11)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(10)
-		expect(item.quality).toEqual(13)
+		expect(item.sellIn).toBe(10)
+		expect(item.quality).toBe(13)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(9)
-		expect(item.quality).toEqual(15)
+		expect(item.sellIn).toBe(9)
+		expect(item.quality).toBe(15)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 		expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 
@@ -159,8 +159,8 @@ describe('Item', () => {
 		expectedValues.forEach(expectedValue => {
 			item.reduceSellIn()
 			item.updateQuality()
-			expect(item.sellIn).toEqual(expectedValue.sellIn)
-			expect(item.quality).toEqual(expectedValue.quality)
+			expect(item.sellIn).toBe(expectedValue.sellIn)
+			expect(item.quality).toBe(expectedValue.quality)
 			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 		})
@@ -186,8 +186,8 @@ describe('Item', () => {
 		expectedValues.forEach(expectedValue => {
 			item.reduceSellIn()
 			item.updateQuality()
-			expect(item.sellIn).toEqual(expectedValue.sellIn)
-			expect(item.quality).toEqual(expectedValue.quality)
+			expect(item.sellIn).toBe(expectedValue.sellIn)
+			expect(item.quality).toBe(expectedValue.quality)
 			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 		})
@@ -213,8 +213,8 @@ describe('Item', () => {
 		expectedValues.forEach(expectedValue => {
 			item.reduceSellIn()
 			item.updateQuality()
-			expect(item.sellIn).toEqual(expectedValue.sellIn)
-			expect(item.quality).toEqual(expectedValue.quality)
+			expect(item.sellIn).toBe(expectedValue.sellIn)
+			expect(item.quality).toBe(expectedValue.quality)
 			expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 			expect(item.quality).toBeLessThanOrEqual(maximumQualityValue)
 		})
@@ -224,20 +224,20 @@ describe('Item', () => {
 		const item = new Item(sulfuras, 10, 10)
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(9)
-		expect(item.quality).toEqual(legendaryItemQualityValue)
+		expect(item.sellIn).toBe(9)
+		expect(item.quality).toBe(legendaryItemQualityValue)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(8)
-		expect(item.quality).toEqual(legendaryItemQualityValue)
+		expect(item.sellIn).toBe(8)
+		expect(item.quality).toBe(legendaryItemQualityValue)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 
 		item.reduceSellIn()
 		item.updateQuality()
-		expect(item.sellIn).toEqual(7)
-		expect(item.quality).toEqual(legendaryItemQualityValue)
+		expect(item.sellIn).toBe(7)
+		expect(item.quality).toBe(legendaryItemQualityValue)
 		expect(item.quality).toBeGreaterThanOrEqual(minimumQualityValue)
 	})
 
@@ -252,16 +252,16 @@ describe('Shop', () => {
 			new Item('Item Three', 3, 3)
 		]
 		const shop = new Shop('Shop One', items)
-		expect(shop.name).toEqual('Shop One')
-		expect(Array.isArray(shop.items)).toEqual(true)
-		expect(shop.items.length).toEqual(items.length)
+		expect(shop.name).toBe('Shop One')
+		expect(Array.isArray(shop.items)).toBe(true)
+		expect(shop.items.length).toBe(items.length)
 	})
 
 	it('When a Shop is instantiated with only "name" parameter, "items" field should be an empty array', () => {
 		const shop = new Shop('Shop One')
-		expect(shop.name).toEqual('Shop One')
-		expect(Array.isArray(shop.items)).toEqual(true)
-		expect(shop.items.length).toEqual(0)
+		expect(shop.name).toBe('Shop One')
+		expect(Array.isArray(shop.items)).toBe(true)
+		expect(shop.items.length).toBe(0)
 	})
 
 	it('Shop should update all it\'s items at the end of the day', () => {
@@ -299,12 +299,12 @@ describe('Shop', () => {
 		]
 		const shop = new Shop('Shop One', items)
 
-		shop.updateItemsQuality() // act 
+		shop.updateItemsQuality() // act
 
 		const shopItems = shop.items
 		shop.items.forEach((item, index) => {
-			expect(item.sellIn).toEqual(expectedValues[index]['sellIn'])
-			expect(item.quality).toEqual(expectedValues[index]['quality'])
+			expect(item.sellIn).toBe(expectedValues[index]['sellIn'])
+			expect(item.quality).toBe(expectedValues[index]['quality'])
 		})
 	})
 

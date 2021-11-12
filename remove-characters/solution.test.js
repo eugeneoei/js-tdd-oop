@@ -28,7 +28,7 @@ test('Remove the letters in first string if any of its letters appear in second 
     cases.forEach(element => {
         const answer = solution(element.stringOne, element.stringTwo)
 
-        expect(answer).toEqual(element.expectedOutput)
+        expect(answer).toBe(element.expectedOutput)
 
     })
 
