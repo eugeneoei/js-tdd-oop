@@ -1,0 +1,14 @@
+{
+  "name": "remove-characters",
+  "version": "1.0.0",
+  "description": "Given 2 strings, remove the characters from the first string which are present in second string (with case sensitivity).",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
