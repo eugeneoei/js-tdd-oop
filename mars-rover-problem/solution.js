@@ -111,21 +111,10 @@ class Rover {
 
     instruction(letters) {
         letters.split('').forEach(letter => {
-            switch (letter) {
-                case 'L':
-                    this.rotate('L')
-                    break
-
-                case 'R':
-                    this.rotate('R')
-                    break
-
-                case 'M':
-                    this.moveForward()
-                    break
-
-                default:
-                    break
+            if (letter === 'M') {
+                this.moveForward()
+            } else {
+                this.rotate(letter)
             }
         })
     }
