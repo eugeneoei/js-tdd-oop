@@ -22,8 +22,42 @@ const rotation = {
     }
 }
 
+class Planet {
+
+    #leftEdge
+    #rightEdge
+    #topEdge
+    #bottomEdge
+
+    constructor(space) {
+        const edges = space.split(' ')
+        this.#leftEdge = 0
+        this.#rightEdge = edges[0]
+        this.#topEdge = edges[1]
+        this.#bottomEdge = 0
+    }
+
+    getLeftEdge() {
+        return this.#leftEdge
+    }
+
+    getRightEdge() {
+        return this.#rightEdge
+    }
+
+    getTopEdge() {
+        return this.#topEdge
+    }
+
+    getBottomEdge() {
+        return this.#bottomEdge
+    }
+
+}
+
 class Rover {
 
+    #planet
     #leftEdge
     #rightEdge
     #topEdge
@@ -32,13 +66,9 @@ class Rover {
     #y
     #facing
 
-    constructor(space, startPosition) {
-        const edges = space.split(' ')
+    constructor(planet, startPosition) {
         const position = startPosition.split(' ')
-        this.#leftEdge = 0
-        this.#rightEdge = edges[0]
-        this.#topEdge = edges[1]
-        this.#bottomEdge = 0
+        this.#planet = planet
         this.#x = parseInt(position[0])
         this.#y = parseInt(position[1])
         this.#facing = position[2]
@@ -55,25 +85,25 @@ class Rover {
     moveForward() {
         switch (this.#facing) {
             case 'N':
-                if (this.#y < this.#topEdge) {
+                if (this.#y < this.#planet.getTopEdge()) {
                     this.#y += 1
                 }
                 break
 
             case 'S':
-                if (this.#y > this.#bottomEdge) {
+                if (this.#y > this.#planet.getBottomEdge()) {
                     this.#y -= 1
                 }
                 break
 
             case 'E':
-                if (this.#x < this.#rightEdge) {
+                if (this.#x < this.#planet.getRightEdge()) {
                     this.#x += 1
                 }
                 break
 
             case 'W':
-                if (this.#x > this.#leftEdge) {
+                if (this.#x > this.#planet.getLeftEdge()) {
                     this.#x -= 1
                 }
                 break
@@ -106,4 +136,7 @@ class Rover {
 
 }
 
-module.exports = Rover
+module.exports = {
+    Planet,
+    Rover
+}

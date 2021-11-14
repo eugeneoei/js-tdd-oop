@@ -1,4 +1,4 @@
-const Rover = require('./solution')
+const { Planet, Rover} = require('./solution')
 
 describe('Rover', () => {
 
@@ -6,7 +6,8 @@ describe('Rover', () => {
 
         const space = '5 5'
         const startPosition = '1 2 N'
-        const rover = new Rover(space, startPosition)
+        const planet = new Planet(space)
+        const rover = new Rover(planet, startPosition)
 
         rover.instruction('L')
 
@@ -18,7 +19,8 @@ describe('Rover', () => {
 
         const space = '5 5'
         const startPosition = '1 2 N'
-        const rover = new Rover(space, startPosition)
+        const planet = new Planet(space)
+        const rover = new Rover(planet, startPosition)
 
         rover.instruction('R')
 
@@ -30,7 +32,8 @@ describe('Rover', () => {
 
         const space = '5 5'
         const startPosition = '1 2 N'
-        const rover = new Rover(space, startPosition)
+        const planet = new Planet(space)
+        const rover = new Rover(planet, startPosition)
 
         rover.instruction('M')
 
@@ -42,7 +45,8 @@ describe('Rover', () => {
 
         const space = '5 5'
         const startPosition = '1 2 N'
-        const rover = new Rover(space, startPosition)
+        const planet = new Planet(space)
+        const rover = new Rover(planet, startPosition)
 
         rover.instruction('LMM')
 
@@ -58,7 +62,8 @@ describe('First Rover', () => {
 
         const space = '5 5'
         const startPosition = '1 2 N'
-        const rover = new Rover(space, startPosition)
+        const planet = new Planet(space)
+        const rover = new Rover(planet, startPosition)
 
         rover.instruction('LMLMLMLMM')
 
@@ -74,7 +79,8 @@ describe('Second Rover', () => {
 
         const space = '5 5'
         const startPosition = '3 3 E'
-        const rover = new Rover(space, startPosition)
+        const planet = new Planet(space)
+        const rover = new Rover(planet, startPosition)
 
         rover.instruction('MMRMMRMRRM')
 
