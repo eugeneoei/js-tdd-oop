@@ -1,0 +1,14 @@
+{
+  "name": "find-remainder",
+  "version": "1.0.0",
+  "description": "Write a function that accepts two integers `number` and `divisor` and return the remainder.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
