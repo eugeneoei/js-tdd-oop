@@ -58,10 +58,6 @@ class Planet {
 class Rover {
 
     #planet
-    #leftEdge
-    #rightEdge
-    #topEdge
-    #bottomEdge
     #x
     #y
     #facing
