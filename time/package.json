@@ -1,0 +1,14 @@
+{
+  "name": "time",
+  "version": "1.0.0",
+  "description": "",
+  "main": "time.js",
+  "scripts": {
+    "test": "jest --coverage --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.4.5"
+  }
+}
